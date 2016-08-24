@@ -12,7 +12,9 @@
 
 @interface NSImage (OpenCV)
 
++ (NSImage*)imageWithMat:(cv::Mat)matImage;
 - (cv::Mat)CVMat;
 - (cv::Mat)CVGrayscaleMat;
+- (BOOL)saveAsJPEGWithName:(NSString*)fileName;
 
 @end

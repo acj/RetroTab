@@ -12,6 +12,43 @@
 
 @implementation NSImage (OpenCV)
 
++ (NSImage*)imageWithMat:(cv::Mat)matImage
+{
+    NSData* data = [NSData dataWithBytes:matImage.data length:matImage.elemSize()*matImage.total()];
+    CGColorSpaceRef colorSpace;
+    
+    if (matImage.elemSize() == 1) {
+        colorSpace = CGColorSpaceCreateDeviceGray();
+    } else {
+        colorSpace = CGColorSpaceCreateDeviceRGB();
+    }
+    
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
+    
+    // Creating CGImage from cv::Mat
+    CGImageRef imageRef = CGImageCreate(matImage.cols,                              //width
+                                        matImage.rows,                              //height
+                                        8,                                          //bits per component
+                                        8 * matImage.elemSize(),                    //bits per pixel
+                                        matImage.step[0],                           //bytesPerRow
+                                        colorSpace,                                 //colorspace
+                                        kCGImageAlphaNone|kCGBitmapByteOrderDefault,// bitmap info
+                                        provider,                                   //CGDataProviderRef
+                                        NULL,                                       //decode
+                                        false,                                      //should interpolate
+                                        kCGRenderingIntentDefault                   //intent
+                                        );
+    
+    
+    // Getting UIImage from CGImage
+    NSImage* finalImage = [[NSImage alloc] initWithCGImage:imageRef size:NSZeroSize];
+    CGImageRelease(imageRef);
+    CGDataProviderRelease(provider);
+    CGColorSpaceRelease(colorSpace);
+    
+    return finalImage;
+}
+
 - (cv::Mat)CVMat
 {
     NSGraphicsContext* context = [NSGraphicsContext currentContext];
@@ -49,6 +86,15 @@
     cv::cvtColor(colorMat, grayMat, CV_BGR2GRAY);
     
     return grayMat;
+}
+
+- (BOOL)saveAsJPEGWithName:(NSString*)fileName
+{
+    NSData* imageData = [self TIFFRepresentation];
+    NSBitmapImageRep* imageRep = [NSBitmapImageRep imageRepWithData:imageData];
+    NSDictionary* imageProperties = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
+    imageData = [imageRep representationUsingType:NSJPEGFileType properties:imageProperties];
+    return [imageData writeToFile:fileName atomically:NO];
 }
 
 @end
