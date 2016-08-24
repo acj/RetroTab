@@ -45,6 +45,7 @@
 		64CBB4EA1D6DD0F2001844AC /* NSImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
 		64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
 		64CBB4ED1D6DD44A001844AC /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		64CBB4EF1D6E257F001844AC /* TextRegionSegmenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRegionSegmenter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
 				64CBB4EA1D6DD0F2001844AC /* NSImage+OpenCV.h */,
 				64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */,
+				64CBB4EF1D6E257F001844AC /* TextRegionSegmenter.h */,
 			);
 			path = RetroTab;
 			sourceTree = "<group>";
