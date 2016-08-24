@@ -16,6 +16,7 @@
 		64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */; };
 		64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */; };
 		64CBB4EE1D6DD44A001844AC /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4ED1D6DD44A001844AC /* OpenCL.framework */; };
+		64CBB4F71D6E29CF001844AC /* OpenCVUtilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4F61D6E29CF001844AC /* OpenCVUtilities.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
 		64CBB4ED1D6DD44A001844AC /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		64CBB4EF1D6E257F001844AC /* TextRegionSegmenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRegionSegmenter.h; sourceTree = "<group>"; };
+		64CBB4F51D6E29CF001844AC /* OpenCVUtilities.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = OpenCVUtilities.h; sourceTree = "<group>"; };
+		64CBB4F61D6E29CF001844AC /* OpenCVUtilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVUtilities.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				64CBB4CF1D6D098E001844AC /* Info.plist */,
 				64CBB4E71D6DC659001844AC /* OpenCVBridge.h */,
 				64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */,
+				64CBB4F51D6E29CF001844AC /* OpenCVUtilities.h */,
+				64CBB4F61D6E29CF001844AC /* OpenCVUtilities.mm */,
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
 				64CBB4EA1D6DD0F2001844AC /* NSImage+OpenCV.h */,
 				64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */,
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */,
+				64CBB4F71D6E29CF001844AC /* OpenCVUtilities.mm in Sources */,
 				64CBB4C91D6D098E001844AC /* ViewController.swift in Sources */,
 				64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */,
 				64CBB4C71D6D098E001844AC /* AppDelegate.swift in Sources */,
