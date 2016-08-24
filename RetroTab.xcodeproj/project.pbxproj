@@ -14,6 +14,7 @@
 		64CBB4D91D6D098E001844AC /* RetroTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4D81D6D098E001844AC /* RetroTabTests.swift */; };
 		64CBB4E51D6DC613001844AC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4E41D6DC613001844AC /* opencv2.framework */; };
 		64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */; };
+		64CBB4EE1D6DD44A001844AC /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4ED1D6DD44A001844AC /* OpenCL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RetroTab-Bridging-Header.h"; sourceTree = "<group>"; };
 		64CBB4E71D6DC659001844AC /* OpenCVBridge.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = OpenCVBridge.h; sourceTree = "<group>"; };
 		64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVBridge.mm; sourceTree = "<group>"; };
+		64CBB4ED1D6DD44A001844AC /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CBB4EE1D6DD44A001844AC /* OpenCL.framework in Frameworks */,
 				64CBB4E51D6DC613001844AC /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +67,7 @@
 		64CBB4BA1D6D098E001844AC = {
 			isa = PBXGroup;
 			children = (
+				64CBB4ED1D6DD44A001844AC /* OpenCL.framework */,
 				64CBB4E31D6DC606001844AC /* Libraries */,
 				64CBB4C51D6D098E001844AC /* RetroTab */,
 				64CBB4D71D6D098E001844AC /* RetroTabTests */,
