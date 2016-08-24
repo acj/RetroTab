@@ -11,7 +11,10 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let image = NSImage(named: "sample1")
+        OpenCVBridge.identifyStructuredTextInImage(image) { 
+            // TODO
+        }
     }
 
     override var representedObject: AnyObject? {
