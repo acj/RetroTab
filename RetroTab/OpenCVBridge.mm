@@ -9,6 +9,7 @@
 #include "OpenCVUtilities.h"
 #import "NSImage+OpenCV.h"
 #include <opencv2/opencv.hpp>
+#include "SimpleTextRegionSegmenter.h"
 
 @implementation OpenCVBridge
 
@@ -26,6 +27,9 @@
     NSLog(@"Vertical: %@", verticalHistogram);
     
     [OpenCVUtilities decorateEdgeOfMat:binaryMat forHorizontalHistogram:horizontalHistogram verticalHistogram:verticalHistogram];
+    
+    NSArray* const textRegions = [SimpleTextRegionSegmenter extractTextRegionsFromMat:binaryMat];
+    NSLog(@"Found %lu regions: %@", (unsigned long)textRegions.count, textRegions);
     
     NSImage* outputImage = [NSImage imageWithMat:binaryMat];
     [outputImage saveAsJPEGWithName:@"/tmp/image.jpg"];
