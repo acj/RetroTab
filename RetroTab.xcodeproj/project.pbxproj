@@ -12,6 +12,8 @@
 		64CBB4CB1D6D098E001844AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64CBB4CA1D6D098E001844AC /* Assets.xcassets */; };
 		64CBB4CE1D6D098E001844AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CBB4CC1D6D098E001844AC /* Main.storyboard */; };
 		64CBB4D91D6D098E001844AC /* RetroTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4D81D6D098E001844AC /* RetroTabTests.swift */; };
+		64CBB4E51D6DC613001844AC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4E41D6DC613001844AC /* opencv2.framework */; };
+		64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,10 @@
 		64CBB4D41D6D098E001844AC /* RetroTabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetroTabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CBB4D81D6D098E001844AC /* RetroTabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetroTabTests.swift; sourceTree = "<group>"; };
 		64CBB4DA1D6D098E001844AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CBB4E41D6DC613001844AC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Libraries/opencv2.framework; sourceTree = "<group>"; };
+		64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RetroTab-Bridging-Header.h"; sourceTree = "<group>"; };
+		64CBB4E71D6DC659001844AC /* OpenCVBridge.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = OpenCVBridge.h; sourceTree = "<group>"; };
+		64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVBridge.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CBB4E51D6DC613001844AC /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +64,7 @@
 		64CBB4BA1D6D098E001844AC = {
 			isa = PBXGroup;
 			children = (
+				64CBB4E31D6DC606001844AC /* Libraries */,
 				64CBB4C51D6D098E001844AC /* RetroTab */,
 				64CBB4D71D6D098E001844AC /* RetroTabTests */,
 				64CBB4C41D6D098E001844AC /* Products */,
@@ -80,6 +88,9 @@
 				64CBB4CA1D6D098E001844AC /* Assets.xcassets */,
 				64CBB4CC1D6D098E001844AC /* Main.storyboard */,
 				64CBB4CF1D6D098E001844AC /* Info.plist */,
+				64CBB4E71D6DC659001844AC /* OpenCVBridge.h */,
+				64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */,
+				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
 			);
 			path = RetroTab;
 			sourceTree = "<group>";
@@ -91,6 +102,14 @@
 				64CBB4DA1D6D098E001844AC /* Info.plist */,
 			);
 			path = RetroTabTests;
+			sourceTree = "<group>";
+		};
+		64CBB4E31D6DC606001844AC /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				64CBB4E41D6DC613001844AC /* opencv2.framework */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */,
 				64CBB4C91D6D098E001844AC /* ViewController.swift in Sources */,
 				64CBB4C71D6D098E001844AC /* AppDelegate.swift in Sources */,
 			);
@@ -314,11 +334,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				INFOPLIST_FILE = RetroTab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.acj.RetroTab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RetroTab/RetroTab-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -326,11 +353,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				INFOPLIST_FILE = RetroTab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.acj.RetroTab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RetroTab/RetroTab-Bridging-Header.h";
 			};
 			name = Release;
 		};
