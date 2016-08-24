@@ -8,4 +8,6 @@
 
 @interface OpenCVBridge : NSObject
 
++ (void)identifyStructuredTextInImage:(NSImage*)image completion:(void(^)())completion;
+
 @end
