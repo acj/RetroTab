@@ -70,7 +70,6 @@
 		64CBB4BA1D6D098E001844AC = {
 			isa = PBXGroup;
 			children = (
-				64CBB4ED1D6DD44A001844AC /* OpenCL.framework */,
 				64CBB4E31D6DC606001844AC /* Libraries */,
 				64CBB4C51D6D098E001844AC /* RetroTab */,
 				64CBB4D71D6D098E001844AC /* RetroTabTests */,
@@ -116,6 +115,7 @@
 		64CBB4E31D6DC606001844AC /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				64CBB4ED1D6DD44A001844AC /* OpenCL.framework */,
 				64CBB4E41D6DC613001844AC /* opencv2.framework */,
 			);
 			name = Libraries;
