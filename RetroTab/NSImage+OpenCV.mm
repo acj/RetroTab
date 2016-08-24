@@ -38,4 +38,17 @@
     return cvMat;
 }
 
+- (cv::Mat)CVGrayscaleMat
+{
+    CGFloat cols = self.size.width;
+    CGFloat rows = self.size.height;
+    
+    cv::Mat colorMat = [self CVMat];
+    cv::Mat grayMat(rows, cols, CV_8UC1);
+    
+    cv::cvtColor(colorMat, grayMat, CV_BGR2GRAY);
+    
+    return grayMat;
+}
+
 @end

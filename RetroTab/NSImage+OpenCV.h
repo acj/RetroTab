@@ -13,5 +13,6 @@
 @interface NSImage (OpenCV)
 
 - (cv::Mat)CVMat;
+- (cv::Mat)CVGrayscaleMat;
 
 @end
