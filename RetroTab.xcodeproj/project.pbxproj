@@ -14,6 +14,7 @@
 		64CBB4D91D6D098E001844AC /* RetroTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4D81D6D098E001844AC /* RetroTabTests.swift */; };
 		64CBB4E51D6DC613001844AC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4E41D6DC613001844AC /* opencv2.framework */; };
 		64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */; };
+		64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */; };
 		64CBB4EE1D6DD44A001844AC /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4ED1D6DD44A001844AC /* OpenCL.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RetroTab-Bridging-Header.h"; sourceTree = "<group>"; };
 		64CBB4E71D6DC659001844AC /* OpenCVBridge.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = OpenCVBridge.h; sourceTree = "<group>"; };
 		64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVBridge.mm; sourceTree = "<group>"; };
+		64CBB4EA1D6DD0F2001844AC /* NSImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
+		64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
 		64CBB4ED1D6DD44A001844AC /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -95,6 +98,8 @@
 				64CBB4E71D6DC659001844AC /* OpenCVBridge.h */,
 				64CBB4E81D6DC659001844AC /* OpenCVBridge.mm */,
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
+				64CBB4EA1D6DD0F2001844AC /* NSImage+OpenCV.h */,
+				64CBB4EB1D6DD0F2001844AC /* NSImage+OpenCV.mm */,
 			);
 			path = RetroTab;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			files = (
 				64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */,
 				64CBB4C91D6D098E001844AC /* ViewController.swift in Sources */,
+				64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */,
 				64CBB4C71D6D098E001844AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
