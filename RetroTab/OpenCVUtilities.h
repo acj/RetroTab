@@ -22,4 +22,6 @@
 
 + (NSArray*)extractContiguousRangesFromHistogram:(NSArray*)histogram withTolerance:(NSUInteger)toleranceInPixels;
 
++ (NSArray*)extractTextBoundingRectsForCanvasWithSize:(CGSize)size horizontalRanges:(NSArray*)horizontalRanges verticalRanges:(NSArray*)verticalRanges;
+
 @end

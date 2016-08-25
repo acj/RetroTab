@@ -121,4 +121,28 @@
     return ranges;
 }
 
++ (NSArray*)extractTextBoundingRectsForCanvasWithSize:(CGSize)size horizontalRanges:(NSArray*)horizontalRanges verticalRanges:(NSArray*)verticalRanges
+{
+    NSMutableArray* const boundingRects = [NSMutableArray arrayWithCapacity:verticalRanges.count];
+    
+    for (NSValue* rawHRange in horizontalRanges) {
+        NSRange hRange = [rawHRange rangeValue];
+        CGRect rectForRow = CGRectMake(0, hRange.location, size.width, hRange.length);
+        
+        NSMutableArray* const intersectingRectsForRow = [NSMutableArray arrayWithCapacity:verticalRanges.count];
+        
+        for (NSValue* rawVRange in verticalRanges) {
+            NSRange vRange = [rawVRange rangeValue];
+            CGRect rectForColumn = CGRectMake(vRange.location, 0, vRange.length, size.height);
+            
+            CGRect intersection = CGRectIntersection(rectForRow, rectForColumn);
+            [intersectingRectsForRow addObject:[NSValue valueWithRect:intersection]];
+        }
+        
+        [boundingRects addObject:intersectingRectsForRow];
+    }
+    
+    return boundingRects;
+}
+
 @end
