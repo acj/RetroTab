@@ -63,4 +63,45 @@
     }
 }
 
++ (NSArray*)extractContiguousRangesFromHistogram:(NSArray*)histogram withTolerance:(NSUInteger)toleranceInPixels
+{
+    const NSInteger NONE = -1;
+    NSMutableArray* const ranges = [NSMutableArray array];
+    
+    NSInteger startPositionForCurrentRange = NONE;
+    NSInteger emptyPixelsSinceLastNonEmptyPixel = 0;
+    
+    for (int i = 0; i < histogram.count; i++) {
+        const BOOL havePixels = [histogram[i] integerValue] > 0;
+        
+        if (havePixels) {
+            if (startPositionForCurrentRange == NONE) {
+                startPositionForCurrentRange = i;
+            }
+            
+            emptyPixelsSinceLastNonEmptyPixel = 0;
+        } else {
+            if (startPositionForCurrentRange != NONE) {
+                emptyPixelsSinceLastNonEmptyPixel++;
+                
+                if (emptyPixelsSinceLastNonEmptyPixel > toleranceInPixels) {
+                    const NSRange range = NSMakeRange(startPositionForCurrentRange, (i - emptyPixelsSinceLastNonEmptyPixel) - startPositionForCurrentRange + 1);
+                    [ranges addObject:[NSValue valueWithRange:range]];
+                    
+                    startPositionForCurrentRange = NONE;
+                    emptyPixelsSinceLastNonEmptyPixel = 0;
+                }
+            }
+        }
+    }
+    
+    if (startPositionForCurrentRange != NONE) {
+        const NSInteger length = ((histogram.count - 1) - emptyPixelsSinceLastNonEmptyPixel) - startPositionForCurrentRange + 1;
+        const NSRange range = NSMakeRange(startPositionForCurrentRange, length);
+        [ranges addObject:[NSValue valueWithRange:range]];
+    }
+    
+    return ranges;
+}
+
 @end
