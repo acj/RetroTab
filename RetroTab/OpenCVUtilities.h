@@ -18,6 +18,8 @@
 
 + (void)decorateEdgeOfMat:(cv::Mat)mat forHorizontalHistogram:(NSArray*)horizontalHistogram verticalHistogram:(NSArray*)verticalHistogram;
 
++ (void)decorateEdgeOfMat:(cv::Mat)mat forHorizontalRanges:(NSArray*)horizontalRanges verticalRanges:(NSArray*)verticalRanges;
+
 + (NSArray*)extractContiguousRangesFromHistogram:(NSArray*)histogram withTolerance:(NSUInteger)toleranceInPixels;
 
 @end

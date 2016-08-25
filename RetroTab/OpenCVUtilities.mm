@@ -63,6 +63,23 @@
     }
 }
 
++ (void)decorateEdgeOfMat:(cv::Mat)mat forHorizontalRanges:(NSArray*)horizontalRanges verticalRanges:(NSArray*)verticalRanges
+{
+    for (NSValue* rangeValue in verticalRanges) {
+        NSRange range = [rangeValue rangeValue];
+        for (NSInteger i = range.location; i < (range.location + range.length); i++) {
+            mat.data[i] = 0;
+        }
+    }
+    
+    for (NSValue* rangeValue in horizontalRanges) {
+        NSRange range = [rangeValue rangeValue];
+        for (NSInteger i = range.location; i < (range.location + range.length); i++) {
+            mat.data[i * mat.cols] = 0;
+        }
+    }
+}
+
 + (NSArray*)extractContiguousRangesFromHistogram:(NSArray*)histogram withTolerance:(NSUInteger)toleranceInPixels
 {
     const NSInteger NONE = -1;
