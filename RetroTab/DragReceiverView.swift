@@ -47,7 +47,6 @@ class DragReceiverView: NSView {
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         if let board = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
             imagePath = board[0] as? String {
-            NSLog("Saw path: \(imagePath)")
             delegate?.dragReceiverViewDidReceiveDragPath(self, dragPath: imagePath)
             return true
         }
