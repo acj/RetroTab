@@ -6,6 +6,7 @@
 //  Copyright © 2016 Adam Jensen. All rights reserved.
 //
 
+#import <TesseractFramework/TesseractFramework.h>
 #import <Foundation/Foundation.h>
 #undef check // Workaround for OpenCV 3; see http://stackoverflow.com/a/26168404/357055
 #include <opencv2/opencv.hpp>
@@ -23,5 +24,7 @@
 + (NSArray*)extractContiguousRangesFromHistogram:(NSArray*)histogram withTolerance:(NSUInteger)toleranceInPixels;
 
 + (NSArray*)extractTextBoundingRectsForCanvasWithSize:(CGSize)size horizontalRanges:(NSArray*)horizontalRanges verticalRanges:(NSArray*)verticalRanges;
+
++ (NSString*)extractTextFromMat:(cv::Mat)mat ocr:(tesseract::TessBaseAPI*)ocr;
 
 @end

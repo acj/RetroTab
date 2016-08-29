@@ -145,4 +145,14 @@
     return boundingRects;
 }
 
++ (NSString*)extractTextFromMat:(cv::Mat)mat ocr:(tesseract::TessBaseAPI*)ocr
+{
+    ocr->SetImage(mat.data, mat.cols, mat.rows, 1, (int)mat.step[0]);
+    NSString* const outText = [NSString stringWithUTF8String:ocr->GetUTF8Text()];
+    NSString* const trimmedText = [outText stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    ocr->Clear();
+    
+    return trimmedText;
+}
+
 @end
