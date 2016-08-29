@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6494FB751D74C8C900DB553D /* DragReceiverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6494FB741D74C8C900DB553D /* DragReceiverView.swift */; };
 		64CBB4C71D6D098E001844AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4C61D6D098E001844AC /* AppDelegate.swift */; };
 		64CBB4C91D6D098E001844AC /* FormattedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4C81D6D098E001844AC /* FormattedTextViewController.swift */; };
 		64CBB4CB1D6D098E001844AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64CBB4CA1D6D098E001844AC /* Assets.xcassets */; };
@@ -158,6 +159,7 @@
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
 				64FD63321D70CDD40083AFCB /* tessdata */,
 				64CBB4C81D6D098E001844AC /* FormattedTextViewController.swift */,
+				6494FB741D74C8C900DB553D /* DragReceiverView.swift */,
 			);
 			path = RetroTab;
 			sourceTree = "<group>";
@@ -333,6 +335,7 @@
 				64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */,
 				64CBB4F71D6E29CF001844AC /* OpenCVUtilities.mm in Sources */,
 				64CBB4C91D6D098E001844AC /* FormattedTextViewController.swift in Sources */,
+				6494FB751D74C8C900DB553D /* DragReceiverView.swift in Sources */,
 				64F01EDD1D7490CB008608C1 /* CSVTextFormatter.m in Sources */,
 				64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */,
 				64CBB4F41D6E25EF001844AC /* SimpleTextRegionSegmenter.mm in Sources */,
