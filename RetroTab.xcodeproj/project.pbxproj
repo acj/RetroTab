@@ -22,6 +22,7 @@
 		64CBB4FC1D6F2E25001844AC /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4ED1D6DD44A001844AC /* OpenCL.framework */; };
 		64CBB4FE1D6F40BF001844AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4FD1D6F40BF001844AC /* CoreGraphics.framework */; };
 		64CBB4FF1D6F40CB001844AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4FD1D6F40BF001844AC /* CoreGraphics.framework */; };
+		64F01EDD1D7490CB008608C1 /* CSVTextFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F01EDC1D7490CB008608C1 /* CSVTextFormatter.m */; };
 		64FD632F1D70CAC20083AFCB /* TesseractFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD632C1D70CAAB0083AFCB /* TesseractFramework.framework */; };
 		64FD63331D70CDD40083AFCB /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 64FD63321D70CDD40083AFCB /* tessdata */; };
 		64FD63351D70D3ED0083AFCB /* TesseractFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64FD632C1D70CAAB0083AFCB /* TesseractFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -89,6 +90,8 @@
 		64CBB4F91D6F2CA5001844AC /* OpenCVUtilitiesTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVUtilitiesTests.mm; sourceTree = "<group>"; };
 		64CBB4FD1D6F40BF001844AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		64F01ED81D749003008608C1 /* TextFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFormatter.h; sourceTree = "<group>"; };
+		64F01EDB1D7490CB008608C1 /* CSVTextFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVTextFormatter.h; sourceTree = "<group>"; };
+		64F01EDC1D7490CB008608C1 /* CSVTextFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVTextFormatter.m; sourceTree = "<group>"; };
 		64FD63261D70CAAB0083AFCB /* TesseractFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TesseractFramework.xcodeproj; path = ../TesseractFramework/TesseractFramework.xcodeproj; sourceTree = "<group>"; };
 		64FD63321D70CDD40083AFCB /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = Libraries/tessdata; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -194,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				64F01ED81D749003008608C1 /* TextFormatter.h */,
+				64F01EDB1D7490CB008608C1 /* CSVTextFormatter.h */,
+				64F01EDC1D7490CB008608C1 /* CSVTextFormatter.m */,
 			);
 			name = Formatters;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */,
 				64CBB4F71D6E29CF001844AC /* OpenCVUtilities.mm in Sources */,
 				64CBB4C91D6D098E001844AC /* ViewController.swift in Sources */,
+				64F01EDD1D7490CB008608C1 /* CSVTextFormatter.m in Sources */,
 				64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */,
 				64CBB4F41D6E25EF001844AC /* SimpleTextRegionSegmenter.mm in Sources */,
 				64CBB4C71D6D098E001844AC /* AppDelegate.swift in Sources */,
