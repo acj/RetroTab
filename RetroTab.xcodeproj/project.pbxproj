@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64CBB4C71D6D098E001844AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4C61D6D098E001844AC /* AppDelegate.swift */; };
-		64CBB4C91D6D098E001844AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4C81D6D098E001844AC /* ViewController.swift */; };
+		64CBB4C91D6D098E001844AC /* FormattedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CBB4C81D6D098E001844AC /* FormattedTextViewController.swift */; };
 		64CBB4CB1D6D098E001844AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64CBB4CA1D6D098E001844AC /* Assets.xcassets */; };
 		64CBB4CE1D6D098E001844AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CBB4CC1D6D098E001844AC /* Main.storyboard */; };
 		64CBB4E51D6DC613001844AC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4E41D6DC613001844AC /* opencv2.framework */; };
@@ -68,7 +68,7 @@
 /* Begin PBXFileReference section */
 		64CBB4C31D6D098E001844AC /* RetroTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetroTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CBB4C61D6D098E001844AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64CBB4C81D6D098E001844AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64CBB4C81D6D098E001844AC /* FormattedTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTextViewController.swift; sourceTree = "<group>"; };
 		64CBB4CA1D6D098E001844AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64CBB4CD1D6D098E001844AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64CBB4CF1D6D098E001844AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				64CBB4F61D6E29CF001844AC /* OpenCVUtilities.mm */,
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
 				64FD63321D70CDD40083AFCB /* tessdata */,
-				64CBB4C81D6D098E001844AC /* ViewController.swift */,
+				64CBB4C81D6D098E001844AC /* FormattedTextViewController.swift */,
 			);
 			path = RetroTab;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 			files = (
 				64CBB4E91D6DC659001844AC /* OpenCVBridge.mm in Sources */,
 				64CBB4F71D6E29CF001844AC /* OpenCVUtilities.mm in Sources */,
-				64CBB4C91D6D098E001844AC /* ViewController.swift in Sources */,
+				64CBB4C91D6D098E001844AC /* FormattedTextViewController.swift in Sources */,
 				64F01EDD1D7490CB008608C1 /* CSVTextFormatter.m in Sources */,
 				64CBB4EC1D6DD0F2001844AC /* NSImage+OpenCV.mm in Sources */,
 				64CBB4F41D6E25EF001844AC /* SimpleTextRegionSegmenter.mm in Sources */,
