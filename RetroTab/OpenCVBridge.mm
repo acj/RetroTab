@@ -4,6 +4,7 @@
 //
 //  Created by Adam Jensen on 8/24/16.
 
+//#import <TesseractFramework/TesseractFramework.h>
 #import <Foundation/Foundation.h>
 #include "OpenCVBridge.h"
 #include "OpenCVUtilities.h"
