@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol TextFormatter
-+ formatText:(NSArray*)textRowArray;
++ (NSString*)formatText:(NSArray*)textRowArray;
 @end
