@@ -22,6 +22,7 @@
 		64CBB4FC1D6F2E25001844AC /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4ED1D6DD44A001844AC /* OpenCL.framework */; };
 		64CBB4FE1D6F40BF001844AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4FD1D6F40BF001844AC /* CoreGraphics.framework */; };
 		64CBB4FF1D6F40CB001844AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CBB4FD1D6F40BF001844AC /* CoreGraphics.framework */; };
+		64FD63331D70CDD40083AFCB /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 64FD63321D70CDD40083AFCB /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		64CBB4F81D6F2CA4001844AC /* RetroTabTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RetroTabTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		64CBB4F91D6F2CA5001844AC /* OpenCVUtilitiesTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVUtilitiesTests.mm; sourceTree = "<group>"; };
 		64CBB4FD1D6F40BF001844AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		64FD63321D70CDD40083AFCB /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = Libraries/tessdata; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
 				64CBB4F21D6E25EF001844AC /* SimpleTextRegionSegmenter.h */,
 				64CBB4F31D6E25EF001844AC /* SimpleTextRegionSegmenter.mm */,
+				64FD63321D70CDD40083AFCB /* tessdata */,
 				64CBB4EF1D6E257F001844AC /* TextRegionSegmenter.h */,
 				64CBB4C81D6D098E001844AC /* ViewController.swift */,
 			);
@@ -228,6 +231,7 @@
 			files = (
 				64CBB4CB1D6D098E001844AC /* Assets.xcassets in Resources */,
 				64CBB4CE1D6D098E001844AC /* Main.storyboard in Resources */,
+				64FD63331D70CDD40083AFCB /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
