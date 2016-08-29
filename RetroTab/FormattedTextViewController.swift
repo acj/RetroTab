@@ -7,24 +7,17 @@
 import Cocoa
 
 class FormattedTextViewController: NSViewController {
+    
     @IBOutlet var textView: NSTextView!
+    var formattedText: String?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let image = NSImage(named: "sample1")
-        OpenCVBridge.identifyStructuredTextInImage(image) { textRows in
-            let formattedText = CSVTextFormatter.formatText(textRows)
-            self.textView.string = formattedText
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        if let formattedText = formattedText {
+            textView.string = formattedText
         }
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
+    
 }
 

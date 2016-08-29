@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="eaD-OJ-yd7">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -651,7 +651,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" identifier="FormattedText" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -663,7 +663,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="661" y="267"/>
         </scene>
         <!--Formatted Text View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -715,7 +715,81 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="661" y="669"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R1I-ji-uZs">
+            <objects>
+                <windowController id="eaD-OJ-yd7" sceneMemberID="viewController">
+                    <window key="window" identifier="DragReceiver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="M9k-lG-6lp">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="526" width="177" height="94"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
+                    </window>
+                    <connections>
+                        <segue destination="frL-br-Bnq" kind="relationship" relationship="window.shadowedContentViewController" id="Jrt-vE-qjj"/>
+                    </connections>
+                </windowController>
+                <customObject id="CVv-2H-kdH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.5" y="267"/>
+        </scene>
+        <!--Drop Image View Controller-->
+        <scene sceneID="DZb-wZ-l67">
+            <objects>
+                <viewController id="frL-br-Bnq" customClass="DropImageViewController" customModule="RetroTab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="26Z-ls-s5x">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4v-Uo-1h9">
+                                <rect key="frame" x="51" y="36" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="R6w-Pw-xYA"/>
+                                    <constraint firstAttribute="width" constant="48" id="cyl-SB-upS"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Dropzone" id="Gi9-S1-pEe"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ja5-pt-QC3">
+                                <rect key="frame" x="22" y="20" width="105" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="628-me-KL2"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Drop image here" id="45d-Cu-vGg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="uFE-4I-Ucg" userLabel="Drag receiver view" customClass="DragReceiverView" customModule="RetroTab" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uFE-4I-Ucg" secondAttribute="bottom" id="2du-3y-7ah"/>
+                            <constraint firstItem="j4v-Uo-1h9" firstAttribute="top" secondItem="26Z-ls-s5x" secondAttribute="top" constant="16" id="43h-Q6-nCE"/>
+                            <constraint firstAttribute="trailing" secondItem="uFE-4I-Ucg" secondAttribute="trailing" id="4t5-Tg-azI"/>
+                            <constraint firstItem="uFE-4I-Ucg" firstAttribute="top" secondItem="26Z-ls-s5x" secondAttribute="top" id="8ns-Y4-qC5"/>
+                            <constraint firstItem="uFE-4I-Ucg" firstAttribute="leading" secondItem="26Z-ls-s5x" secondAttribute="leading" id="Ekm-sW-pKI"/>
+                            <constraint firstItem="j4v-Uo-1h9" firstAttribute="leading" secondItem="26Z-ls-s5x" secondAttribute="leading" constant="51" id="Gcp-jf-h3i"/>
+                            <constraint firstItem="ja5-pt-QC3" firstAttribute="top" secondItem="j4v-Uo-1h9" secondAttribute="bottom" constant="-1" id="URO-Sh-bsa"/>
+                            <constraint firstAttribute="trailing" secondItem="j4v-Uo-1h9" secondAttribute="trailing" constant="51" id="fkE-hv-hWC"/>
+                            <constraint firstItem="ja5-pt-QC3" firstAttribute="centerX" secondItem="j4v-Uo-1h9" secondAttribute="centerX" id="fym-jM-mq8"/>
+                            <constraint firstAttribute="bottom" secondItem="ja5-pt-QC3" secondAttribute="bottom" constant="20" id="por-rt-tZa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dragReceiverView" destination="uFE-4I-Ucg" id="G5U-DJ-AJe"/>
+                        <segue destination="B8D-0N-5wS" kind="show" identifier="showFormattedTextSegue" id="540-N4-0fg"/>
+                    </connections>
+                </viewController>
+                <customObject id="lZh-9w-p6Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="584"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dropzone" width="82" height="85"/>
+    </resources>
 </document>
