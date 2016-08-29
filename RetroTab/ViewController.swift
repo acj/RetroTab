@@ -12,7 +12,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         let image = NSImage(named: "sample1")
-        OpenCVBridge.identifyStructuredTextInImage(image) { 
+        OpenCVBridge.identifyStructuredTextInImage(image) { textRows in
             // TODO
         }
     }
