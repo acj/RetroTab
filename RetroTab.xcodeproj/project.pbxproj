@@ -139,6 +139,7 @@
 		64CBB4C51D6D098E001844AC /* RetroTab */ = {
 			isa = PBXGroup;
 			children = (
+				64F01ED51D748F83008608C1 /* Segmenters */,
 				64CBB4C61D6D098E001844AC /* AppDelegate.swift */,
 				64CBB4CA1D6D098E001844AC /* Assets.xcassets */,
 				64CBB4CF1D6D098E001844AC /* Info.plist */,
@@ -150,10 +151,7 @@
 				64CBB4F51D6E29CF001844AC /* OpenCVUtilities.h */,
 				64CBB4F61D6E29CF001844AC /* OpenCVUtilities.mm */,
 				64CBB4E61D6DC659001844AC /* RetroTab-Bridging-Header.h */,
-				64CBB4F21D6E25EF001844AC /* SimpleTextRegionSegmenter.h */,
-				64CBB4F31D6E25EF001844AC /* SimpleTextRegionSegmenter.mm */,
 				64FD63321D70CDD40083AFCB /* tessdata */,
-				64CBB4EF1D6E257F001844AC /* TextRegionSegmenter.h */,
 				64CBB4C81D6D098E001844AC /* ViewController.swift */,
 			);
 			path = RetroTab;
@@ -178,6 +176,16 @@
 				64CBB4E41D6DC613001844AC /* opencv2.framework */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		64F01ED51D748F83008608C1 /* Segmenters */ = {
+			isa = PBXGroup;
+			children = (
+				64CBB4F21D6E25EF001844AC /* SimpleTextRegionSegmenter.h */,
+				64CBB4F31D6E25EF001844AC /* SimpleTextRegionSegmenter.mm */,
+				64CBB4EF1D6E257F001844AC /* TextRegionSegmenter.h */,
+			);
+			name = Segmenters;
 			sourceTree = "<group>";
 		};
 		64FD63271D70CAAB0083AFCB /* Products */ = {
