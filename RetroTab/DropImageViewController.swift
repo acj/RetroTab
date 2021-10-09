@@ -9,7 +9,10 @@
 import Cocoa
 
 class DropImageViewController: NSViewController {
+    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var dropImageLabel: NSTextField!
     @IBOutlet weak var dragReceiverView: DragReceiverView!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     private var formattedText: String?
     
     override func viewDidLoad() {
@@ -28,21 +31,35 @@ class DropImageViewController: NSViewController {
 }
 
 private extension DropImageViewController {
-    func processImage(path: String) {
-        if let image = NSImage(contentsOfFile: path) {
+    func processImage(image: NSImage) {
+        progressIndicator.hidden = false
+        progressIndicator.startAnimation(nil)
+        imageView.hidden = true
+        dropImageLabel.hidden = true
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
             OpenCVBridge.identifyStructuredTextInImage(image) { textRows in
-                self.formattedText = CSVTextFormatter.formatText(textRows)
-                self.performSegueWithIdentifier("showFormattedTextSegue", sender: self)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.formattedText = CSVTextFormatter.formatText(textRows)
+                    self.performSegueWithIdentifier("showFormattedTextSegue", sender: self)
+                    
+                    self.progressIndicator.hidden = true
+                    self.progressIndicator.stopAnimation(nil)
+                    self.imageView.hidden = false
+                    self.dropImageLabel.hidden = false
+                }
             }
-        } else {
-            // TODO: error
-            NSLog("Error opening file")
         }
     }
 }
 
 extension DropImageViewController: DragReceiverViewDelegate {
     func dragReceiverViewDidReceiveDragPath(view: DragReceiverView, dragPath: String) {
-        processImage(dragPath)
+        if let image = NSImage(contentsOfFile: dragPath) {
+            processImage(image)
+        } else {
+            // TODO: error
+            NSLog("Error opening file")
+        }
     }
 }

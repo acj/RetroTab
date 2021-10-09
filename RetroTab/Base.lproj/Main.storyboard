@@ -764,6 +764,11 @@
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="uFE-4I-Ucg" userLabel="Drag receiver view" customClass="DragReceiverView" customModule="RetroTab" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                <subviews>
+                                    <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-HH-96T">
+                                        <rect key="frame" x="59" y="34" width="32" height="32"/>
+                                    </progressIndicator>
+                                </subviews>
                             </customView>
                         </subviews>
                         <constraints>
@@ -781,6 +786,9 @@
                     </view>
                     <connections>
                         <outlet property="dragReceiverView" destination="uFE-4I-Ucg" id="G5U-DJ-AJe"/>
+                        <outlet property="dropImageLabel" destination="ja5-pt-QC3" id="al4-Tq-cIa"/>
+                        <outlet property="imageView" destination="j4v-Uo-1h9" id="drX-Ep-G6H"/>
+                        <outlet property="progressIndicator" destination="7SA-HH-96T" id="faz-2N-5LL"/>
                         <segue destination="B8D-0N-5wS" kind="show" identifier="showFormattedTextSegue" id="540-N4-0fg"/>
                     </connections>
                 </viewController>

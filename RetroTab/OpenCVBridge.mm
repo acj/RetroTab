@@ -34,8 +34,8 @@ static NSString* _pathToTesseractDataInBundle()
     cv::Mat sourceMat = [image CVGrayscaleMat];
     cv::Mat binaryMat = cv::Mat();
     
-//    cv::GaussianBlur(sourceMat, sourceMat, cv::Size(1, 1), 0, 0);
-    cv::threshold(sourceMat, binaryMat, 0, 255, cv::THRESH_BINARY | cv::THRESH_OTSU);
+//    cv::medianBlur(sourceMat, sourceMat, 1);
+    cv::threshold(sourceMat, binaryMat, 0, 255, cv::THRESH_OTSU);
     
     NSArray* const textRegions = [SimpleTextRegionSegmenter extractTextRegionsFromMat:binaryMat];
 //    NSLog(@"Found %lu regions: %@", (unsigned long)textRegions.count, textRegions);
@@ -59,8 +59,8 @@ static NSString* _pathToTesseractDataInBundle()
     }
     
 //    NSLog(@"Output: %@", textRows);
-//    NSImage* outputImage = [NSImage imageWithMat:binaryMat];
-//    [outputImage saveAsJPEGWithName:@"/tmp/image.jpg"];
+    NSImage* outputImage = [NSImage imageWithMat:binaryMat];
+    [outputImage saveAsJPEGWithName:@"/tmp/image.jpg"];
     
     tesseractOCR->End();
     
