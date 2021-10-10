@@ -21,7 +21,7 @@ class DropImageViewController: NSViewController {
         dragReceiverView.delegate = self
     }
     
-    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == "showFormattedTextSegue",
             let windowController = segue.destinationController as? NSWindowController,
             let vc = windowController.contentViewController as? FormattedTextViewController {
@@ -32,21 +32,21 @@ class DropImageViewController: NSViewController {
 
 private extension DropImageViewController {
     func processImage(image: NSImage) {
-        progressIndicator.hidden = false
+        progressIndicator.isHidden = false
         progressIndicator.startAnimation(nil)
-        imageView.hidden = true
-        dropImageLabel.hidden = true
+        imageView.isHidden = true
+        dropImageLabel.isHidden = true
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
-            OpenCVBridge.identifyStructuredTextInImage(image) { textRows in
-                dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.global(qos: DispatchQoS.default.qosClass).async {
+            OpenCVBridge.identifyStructuredText(in: image) { textRows in
+                DispatchQueue.main.async {
                     self.formattedText = CSVTextFormatter.formatText(textRows)
-                    self.performSegueWithIdentifier("showFormattedTextSegue", sender: self)
+                    self.performSegue(withIdentifier: "showFormattedTextSegue", sender: self)
                     
-                    self.progressIndicator.hidden = true
+                    self.progressIndicator.isHidden = true
                     self.progressIndicator.stopAnimation(nil)
-                    self.imageView.hidden = false
-                    self.dropImageLabel.hidden = false
+                    self.imageView.isHidden = false
+                    self.dropImageLabel.isHidden = false
                 }
             }
         }
@@ -56,7 +56,7 @@ private extension DropImageViewController {
 extension DropImageViewController: DragReceiverViewDelegate {
     func dragReceiverViewDidReceiveDragPath(view: DragReceiverView, dragPath: String) {
         if let image = NSImage(contentsOfFile: dragPath) {
-            processImage(image)
+            processImage(image: image)
         } else {
             // TODO: error
             NSLog("Error opening file")

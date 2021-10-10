@@ -16,56 +16,57 @@ class DragReceiverView: NSView {
         super.init(coder: coder)
         
         let supportedDraggedTypes = [
-            NSFilenamesPboardType,
-            NSURLPboardType,
-            NSPasteboardTypeTIFF,
-            NSPasteboardTypePNG,
-            NSTIFFPboardType
+            NSPasteboard.PasteboardType.fileURL,
+            NSPasteboard.PasteboardType.URL,
+            NSPasteboard.PasteboardType.tiff,
+            NSPasteboard.PasteboardType.tiff,
+            NSPasteboard.PasteboardType.png,
         ]
         registerForDraggedTypes(supportedDraggedTypes)
     }
     
-    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
+    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         // TODO: Add handling for "raw" images that are not file paths
-        if checkExtension(sender) {
+        if checkExtension(drag: sender) {
             fileTypeIsAcceptable = true
-            return .Copy
+            return .copy
         } else {
             fileTypeIsAcceptable = false
-            return .None
+            return []
         }
     }
     
-    override func draggingUpdated(sender: NSDraggingInfo) -> NSDragOperation {
+    override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
         if fileTypeIsAcceptable {
-            return .Copy
+            return .copy
         } else {
-            return .None
+            return []
         }
     }
     
-    override func performDragOperation(sender: NSDraggingInfo) -> Bool {
-        if let board = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
-            imagePath = board[0] as? String {
-            delegate?.dragReceiverViewDidReceiveDragPath(self, dragPath: imagePath)
+    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        if let board = sender.draggingPasteboard.propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray,
+           let imagePath = board[0] as? String {
+            delegate?.dragReceiverViewDidReceiveDragPath(view: self, dragPath: imagePath)
             return true
         }
         return false
     }
     
     func checkExtension(drag: NSDraggingInfo) -> Bool {
-        if let board = drag.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray,
-            path = board[0] as? String {
-            let url = NSURL(fileURLWithPath: path)
-            if let fileExtension = url.pathExtension?.lowercaseString {
-                return fileTypes.contains(fileExtension)
-            }
+        let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
+        if let board = drag.draggingPasteboard.propertyList(forType: type) as? NSArray, let path = board[0] as? String {
+             let url = NSURL(fileURLWithPath: path)
+             if let fileExtension = url.pathExtension?.lowercased() {
+                 return fileTypes.contains(fileExtension)
+             }
         }
+        
         return false
     }
     
 }
 
-protocol DragReceiverViewDelegate: class {
+protocol DragReceiverViewDelegate: AnyObject {
     func dragReceiverViewDidReceiveDragPath(view: DragReceiverView, dragPath: String)
 }
